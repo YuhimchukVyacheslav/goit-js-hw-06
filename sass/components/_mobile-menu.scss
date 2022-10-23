@@ -1,0 +1,117 @@
+.mobmenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+  transition: var(--transition-time);
+
+  width: 100%;
+  height: 100%;
+
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 40px;
+
+  background-color: var(--btn-txt-cl);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &__list:nth-child(2) {
+  margin-bottom: auto;
+}
+}
+
+
+.menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  padding: 0;
+
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .mobmenu & {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+.mobmenu__item {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: calc(47 / 40);
+  letter-spacing: 0.02em;
+}
+
+.mobmenu__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobmenu__tel {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: calc(40 / 34);
+  letter-spacing: 0.02em;
+  color: var(--main-link-cl);
+}
+.mobmenu__mail {
+  margin-bottom: 64px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: calc(28 / 24);
+  letter-spacing: 0.02em;
+  color: var(--main-txt-item);
+}
+
+.mobmenu__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  letter-spacing: 0.02em;
+  color: var(--main-link-cl);
+}
+
+.mobmenu__social--item:not(:last-child) .mobmenu__social--link {
+  display: flex;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.menu-btn--close {
+  transition: fill var(--transition-time);
+}
+.menu-btn--close:active {
+  fill: var(--main-link-cl);
+}

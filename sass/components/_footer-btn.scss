@@ -1,0 +1,19 @@
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 28px;
+  transition: background-color var(--transition-time);
+  &:focus,
+  &:hover {
+    background-color: var(--main-bt-bg-cl);
+  }
+  &__icon {
+  fill: currentColor;
+  margin-left: 10px;
+  margin-right: 28px;
+}
+}
+
+
