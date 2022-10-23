@@ -12,3 +12,11 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const listRef = document.querySelector(".gallery");
+const markup = images.map(
+  ({ url, alt }) =>
+    `<li><img src="${url}" alt="${alt}" width = 300 height = 250></li>`
+);
+listRef.insertAdjacentHTML('afterbegin', markup);
+listRef.setAttribute("style", "display: flex; list-style-type:none");
+console.log(markup);
