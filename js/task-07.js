@@ -5,4 +5,3 @@ const text = document.querySelector("#text");
 inputRangeRef.oninput = () => {
   text.style.fontSize = inputRangeRef.value + "px";
 };
-console.log(inputRangeRef.oninput);
