@@ -5,8 +5,13 @@ formRef.addEventListener("submit", (evt) => {
   const {
     elements: { email, password },
   } = evt.currentTarget;
+  const answer = {};
   if (email.value === "" || password.value === "") {
     alert("Всі поля повинні бути заповнені");
+    evt.currentTarget.reset();
+    return;
   }
-  console.log(email.value, password.value);
+  answer.email = email.value;
+  answer.password = password.value;
+  console.log(answer);
 });

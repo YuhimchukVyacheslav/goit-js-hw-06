@@ -7,14 +7,12 @@ const ingredients = [
   "Condiments",
 ];
 
-const listUl = document.getElementById("ingredients");
-const arr = [];
-for (let i = 0; i < ingredients.length; i += 1) {
-  const newItemLi = document.createElement("li");
-  newItemLi.textContent = ingredients[i];
-  newItemLi.classList.add("item");
-  arr.push(newItemLi);
-}
+const listUl = document.querySelector("#ingredients");
+console.log(listUl);
+const arr = ingredients.map((ingredient) => {
+  const ingredientsLi = document.createElement("li");
+  ingredientsLi.textContent = ingredient;
+  ingredientsLi.classList.add("item");
+  return ingredientsLi;
+});
 listUl.append(...arr);
-
-// console.log(listUl);
